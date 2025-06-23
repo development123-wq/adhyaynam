@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester');
+
+/* Font Styles */
+.cursive {
+  font-family: 'Pinyon Script', cursive;
+}
+
+.sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+ 
+.underline {
+  border-bottom: 1px solid #777;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.pm-empty-space {
+  height: 40px;
+  width: 100%;
+}
+
+ 
+/* Certificate Styles */
+.pm-certificate-container {
+  position: relative;
+  width: 800px;
+  height: 700px;
+  background-color: #618597;
+  padding: 30px;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.outer-border, .inner-border, .pm-certificate-border {
+  position: absolute;
+  border: 2px solid #fff;
+}
+
+.outer-border {
+  width: 794px;
+  height: 694px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner-border {
+  width: 730px;
+  height: 630px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pm-certificate-border {
+  width: 720px;
+  height: 620px;
+  border: 1px solid #E1E5F0;
+  background-color: rgba(255, 255, 255, 1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Certificate Block Styles */
+.pm-certificate-block {
+  width: 650px;
+  height: 200px;
+  position: relative;
+  left: 50%;
+  top: 70px;
+  transform: translateX(-50%);
+}
+
+.pm-certificate-header {
+  margin-bottom: 10px;
+}
+
+.pm-certificate-title h2 {
+  font-size: 34px !important;
+}
+
+.pm-certificate-body {
+  padding: 20px;
+}
+
+.pm-name-text {
+  font-size: 20px;
+}
+
+.pm-earned, .pm-course-title {
+  margin: 15px 0 20px;
+}
+
+.pm-earned-text, .pm-course-title .pm-earned-text {
+  font-size: 20px;
+}
+
+.pm-credits-text, .pm-course-title .pm-credits-text {
+  font-size: 15px;
+}
+
+.pm-certified {
+  font-size: 12px;
+}
+
+.pm-certified .underline {
+  margin-bottom: 5px;
+}
+
+.pm-certificate-footer {
+  width: 650px;
+  height: 100px;
+  position: relative;
+  left: 50%;
+  bottom: -105px;
+  transform: translateX(-50%);
+}

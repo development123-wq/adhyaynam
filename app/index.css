@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* font-family: "Inter", sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+@layer components {
+  input[type="checkbox"]:checked~label span svg {
+    @apply inline-flex;
+  }
+
+  .sticky .header-logo {
+    @apply py-5 lg:py-2;
+  }
+
+  .sticky .menu-scroll.active {
+    @apply opacity-70;
+  }
+
+  input#togglePlan:checked~.dot {
+    @apply translate-x-full;
+  }
+
+  input#checkboxLabel:checked~.box span {
+    @apply opacity-100;
+  }
+}
+
+.menufont {
+  font-size: 13px
+}
+
+
+/* animation */
+.tanimation {
+  position: relative;
+  /* font-family: sans-serif; */
+  text-transform: uppercase;
+  /* font-size: 2em;
+  letter-spacing: 4px; */
+  overflow: hidden;
+  background: linear-gradient(90deg, #1d2144, #fff, #1d2144);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 4s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+
+  100% {
+    background-position: 500%;
+  }
+}
+
+
+.tanimationone {
+  position: relative;
+  /* font-family: sans-serif; */
+  text-transform: uppercase;
+  /* font-size: 2em;
+  letter-spacing: 4px; */
+  overflow: hidden;
+  background: linear-gradient(90deg, #1d2144, #fff, #1d2144);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animates 4s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animates {
+  100% {
+    background-position: -500%;
+  }
+
+  0% {
+    background-position: 500%;
+  }
+}
+
+
+/* image gallery */
+#gallery {
+  column-count: 4;
+  column-gap: 8px;
+}
+
+@media (max-width:1200px) {
+  #gallery {
+    column-count: 3;
+    column-gap: 3px;
+  }
+}
+
+@media (max-width:800px) {
+  #gallery {
+    column-count: 2;
+    column-gap: 2px;
+  }
+}
+
+@media (max-width:600px) {
+  #gallery {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+  .menufont {
+    font-size: 15px
+  }
+
+  .liborder {
+    padding: 5px;
+  }
+}
+
+#gallery img,
+#gallery video {
+  width: 100%;
+  height: auto;
+  margin: 1px auto;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.modal-img,
+.model-vid {
+  width: 100%;
+  height: auto;
+}
+
+.modal-body {
+  padding: 0px;
+}
+
+/*slick slider color  */
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  /* opacity: .75; */
+  color: black !important;
+}
+
+.banner .slick-prev {
+  left: 10px !important;
+  z-index: 99 !important;
+}
+
+.banner .slick-next {
+  right: 10px !important;
+  z-index: 99 !important;
+}
+
+.slick-next {
+  right: -15px;
+}
+
+.slick-prev {
+  left: -15px;
+  z-index: 99;
+}
+
+/* top header */
+.headertopright a {
+  line-height: 39px;
+  color: #5f5f5f;
+  font-size: 14px;
+  padding: 0px 12px;
+  /* float: right; */
+}
+
+.link-sml {
+  font-size: 15px !important;
+}
+
+/* image animation */
+.frame {
+  position: relative;
+  cursor: pointer;
+  /* perspective: 500px;  */
+}
+
+.frame .details {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(90deg);
+  transform-origin: 50%;
+  background: rgba(216, 49, 136, 1);
+  opacity: 0;
+  transition: all 0.4s ease-in;
+
+}
+
+.frame:hover .details {
+  transform: translate(-50%, -50%) rotateY(0deg);
+  opacity: 1;
+}
+
+/*Events and cellibration Gallery css */
+
+
+.section-padding {
+  padding-top: 80px;
+}
+
+.gallery-section {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 46px;
+  font-weight: 600;
+  color: #d83188;
+}
+
+.filter {
+  text-align: center;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.btn {
+  padding: 3px 8px;
+  margin: 5px 4px 4px 0;
+  display: inline-block;
+  color: #003;
+  background: #eee;
+  border: 1px solid #d83188;
+  transition: all 0.4s;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn:hover,
+.btn-active {
+  background: #d83188;
+  color: #fff;
+  -webkit-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  transform: translateY(3px);
+}
+
+
+.sets .hide,
+.sets .pophide {
+  display: none;
+  width: 0%;
+  opacity: 0;
+}
+
+.openDiv {
+  width: 100%;
+  height: 100vh;
+  background: #000000e7;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  z-index: 9999;
+}
+
+.imgPreview {
+  width: 70%;
+  object-fit: scale-down;
+  max-height: 40vw;
+  height: auto;
+}
+
+
+
+/* resposive CSS Code */
+
+/* @media max-width: 1199px {
+  .section-padding {
+    padding-top: 70px;
+  }
+} */
+@media (max-width: 991px) {
+  .section-padding {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .gallery img {
+    margin: 8px 8px;
+    width: 175px;
+  }
+
+  .closeBtn {
+    padding: 6px 25px;
+  }
+
+  .prevButton,
+  .nextButton {
+    font-size: 18px;
+    padding: 8px 25px;
+  }
+
+  .img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 540px) {
+  .section-padding {
+    padding-top: 30px;
+  }
+
+  .gallery img {
+    margin: 8px 6px;
+    width: 155px;
+  }
+
+  .closeBtn {
+    font-size: 18px;
+    border-radius: 15px;
+  }
+
+  .prevButton,
+  .nextButton {
+    font-size: 18px;
+    padding: 6px 20px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+
+  .imgPreview {
+    width: 90%;
+    max-height: 50vh;
+    height: auto;
+  }
+
+}
+
+
+
+/* our programs courses start */
+.food-menu {
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+
+.menu-item {
+  position: relative;
+  text-align: center;
+  /* height: 260px; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-logo {
+  position: absolute;
+  display: inline-block;
+  width: 16%;
+  top: 14%;
+  left: 42%;
+}
+
+.fruits:hover .first-frame {
+  opacity: 1;
+}
+
+.first-frame {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  width: 83%;
+  height: 75%;
+  border: 1px solid #090e34;
+  z-index: 1;
+  opacity: 0;
+}
+
+.first-frame p {
+  color: #d9d9d9;
+  padding-top: 10%;
+}
+
+@keyframes mydecor {
+  from {
+    width: 1%;
+  }
+
+  to {
+    width: 85%;
+  }
+}
+
+.steak:hover .decor-line1,
+.steak:hover .decor-line2 {
+  opacity: 1;
+}
+
+@media
+
+/* medium */
+(min-width: 451px) {
+  .food-menu {
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  .food-menu h2 {
+    margin: 60px auto 40px auto;
+  }
+
+
+
+  .menu span {
+    left: 36%;
+  }
+
+  .second-frame p {
+    font-size: 24px;
+    padding-left: 20%;
+  }
+
+  .pasta:hover span {
+    transform: scale(1.5, 1.5) translateX(-14%) translateY(550%);
+  }
+
+  .second-frame {
+    left: 8%;
+    border-left: 2px #f6bbbb solid;
+  }
+}
+
+@media
+
+/* large */
+(min-width: 769px) {
+  .food-menu {
+    padding-bottom: 80px;
+    text-align: center;
+  }
+
+  .food-menu h2 {
+    margin: 80px auto 40px auto;
+  }
+
+  .menu-wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+
+  .menu span {
+    left: 30%;
+  }
+
+  .second-frame p {
+    font-size: 16px;
+    padding-left: 17%;
+  }
+
+  .pasta:hover span {
+    transform: scale(1.5, 1.5) translateX(-4%) translateY(350%);
+  }
+}
+
+@media
+
+/* extra-large */
+(min-width: 1025px) {
+  .food-menu {
+    padding-bottom: 100px;
+  }
+
+  .food-menu h2 {
+    margin: 60px auto 40px auto;
+  }
+
+  .menu-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .menu span {
+    left: 32%;
+  }
+
+  .second-frame p {
+    font-size: 17px;
+  }
+
+  .pasta:hover span {
+    transform: scale(1.5, 1.5) translateX(-12%) translateY(450%);
+  }
+}
+
+
+
+/* text animations in writng test */
+
+#typing {
+  width: 0ch;
+  color: white;
+  float: left; 
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 5s steps(22) 1s infinite alternate;
+}
+#crow {
+  float: left; 
+  font-family: consolas;
+  font-weight: bold; 
+  animation: crow 0.5s linear 0s infinite;
+}
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 25ch;
+  }
+}
+@keyframes crow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- */
+ 
