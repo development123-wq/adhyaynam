@@ -1,18 +1,26 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = "mongodb+srv://devadmin:oWHmLGKk7NHCsWgG@cluster0.1hoarf8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-//const MONGODB_URI = "mongodb+srv://hitesh:QWdPRZ2LiXHVx8aD@cluster0.h16vtk6.mongodb.net/?retryWrites=true&w=majority"; //this is project0 id and password (for test)
+const MONGODB_URI = "mongodb+srv://devadmin:oWHmLGKk7NHCsWgG@cluster0.1hoarf8.mongodb.net/adhyayanamacademy?retryWrites=true&w=majority&appName=Cluster0";
+
+// Global cache to avoid reconnects
+let isConnected;
 
 const connectDb = async () => {
-    if (mongoose.connections[0].readyState) {
-        return;
-    }
+  if (isConnected) {
+    return;
+  }
 
-    await mongoose.connect(MONGODB_URI, {
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
+  try {
+    const db = await mongoose.connect(MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
+    isConnected = db.connections[0].readyState;
+    console.log("✅ MongoDB connected successfully.");
+  } catch (error) {
+    console.error("❌ MongoDB connection failed:", error);
+    throw error;
+  }
 };
 
 export default connectDb;
-
